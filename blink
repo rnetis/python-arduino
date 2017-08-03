@@ -1,0 +1,9 @@
+#!/usr/bin/python
+from pyfirmata import Arduino
+import time,sys
+while True:
+	for x in [12,11,10,9]:
+		Arduino(sys.argv[1]).digital[x].write(1)
+		time.sleep(float(sys.argv[2]))
+		Arduino(sys.argv[1]).digital[x].write(0)
+		time.sleep(float(sys.argv[2]))
